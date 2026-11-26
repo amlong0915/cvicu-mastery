@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CVICU: Mastering The Bedside — Cardiac ICU, CSC, CMC &amp; CCRN Prep</title>
+  <style>
+    :root {
+      --bg: #0B111B;
+      --surface: #131C2B;
+      --surface-alt: #1B273B;
+      --border: #26354D;
+      --text: #F1F5F9;
+      --muted: #94A3B8;
+      --cyan: #06B6D4;
+      --red: #EF4444;
+      --green: #22C55E;
+      --amber: #F59E0B;
+      --blue: #3B82F6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 22px; }
+    nav {
+      border-bottom: 1px solid var(--border);
+      background: rgba(11, 17, 27, 0.92);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(8px);
+      z-index: 10;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 18px; }
+    .brand img { width: 34px; height: 34px; border-radius: 8px; border: 1px solid var(--border); }
+    .nav-links { display: flex; gap: 18px; font-size: 14px; }
+    a { color: var(--cyan); text-decoration: none; font-weight: 600; }
+    a:hover { text-decoration: underline; }
+    .hero {
+      padding: 64px 0 48px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 32px;
+      align-items: center;
+    }
+    @media (max-width: 780px) {
+      .hero { grid-template-columns: 1fr; padding: 40px 0 28px; }
+    }
+    .kicker {
+      color: var(--cyan);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+    h1 { font-size: 42px; line-height: 1.15; margin: 10px 0 16px; }
+    .lead { color: var(--muted); font-size: 17px; margin-bottom: 24px; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .btn-primary { background: var(--blue); color: #fff; }
+    .btn-outline { border: 1px solid var(--border); color: var(--text); background: var(--surface); }
+    .stat-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+    }
+    .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .stat { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 14px; }
+    .stat-num { font-size: 24px; font-weight: 800; color: var(--cyan); }
+    .stat-lbl { font-size: 12px; color: var(--muted); }
+    section { padding: 44px 0; border-top: 1px solid var(--border); }
+    h2 { font-size: 26px; margin: 0 0 10px; }
+    .sub { color: var(--muted); margin: 0 0 24px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+    .tag-cyan { background: #0E2A38; color: var(--cyan); }
+    .tag-green { background: #123524; color: var(--green); }
+    .tag-amber { background: #291E0B; color: var(--amber); }
+    .tag-red { background: #2D1215; color: var(--red); }
+    .card h3 { margin: 4px 0 8px; font-size: 17px; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; }
+    .b2b-box {
+      background: linear-gradient(135deg, #131C2B, #0E2A38);
+      border: 1px solid var(--cyan);
+      border-radius: 16px;
+      padding: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0 48px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="wrap nav-inner">
+      <div class="brand">
+        <img src="./assets/icon.png" alt="CVICU: Mastering The Bedside icon" />
+        <span>CVICU: Mastering The Bedside</span>
+      </div>
+      <div class="nav-links">
+        <a href="#simulators">Simulators</a>
+        <a href="#calculators">Calculators</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#educators">Hospitals</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section class="hero" style="border-top: none;">
+      <div>
+        <div class="kicker">CVICU • CT-ICU • CSC • CMC • CCRN-Cardiac</div>
+        <h1>Master Cardiac Critical Care at the Bedside</h1>
+        <p class="lead">
+          2,500 evidence-based clinical vignettes across 42 specialized CVICU banks—paired with 6 interactive simulators (ECMO, IABP, PA/CVP, ECG Caliper, Impella/LVAD, and Epicardial Pacer Box) plus shift-ready Fick, IV Drip &amp; hemodynamic calculators.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#pricing">Coming Soon: iOS &amp; Android</a>
+          <a class="btn btn-outline" href="#educators">Hospital Residency Packs</a>
+        </div>
+      </div>
+
+      <div class="stat-box">
+        <div class="stat-grid">
+          <div class="stat">
+            <div class="stat-num">2,500</div>
+            <div class="stat-lbl">Approved Clinical Vignettes</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" style="color: var(--green);">42</div>
+            <div class="stat-lbl">CVICU &amp; CT-ICU Banks</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" style="color: var(--amber);">6</div>
+            <div class="stat-lbl">Interactive Bedside Labs</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" style="color: var(--red);">100%</div>
+            <div class="stat-lbl">Offline Shift-Break Ready</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="simulators">
+      <h2>Interactive Visual Lab</h2>
+      <p class="sub">Stop memorizing static textbook diagrams—adjust settings, trigger alarms, and watch bedside physiology respond in real time.</p>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag tag-red">IABP TIMING LAB</span>
+          <h3>1:1 &amp; 1:2 Counterpulsation</h3>
+          <p>Visualize Optimal, Early Inflation, Late Inflation, Early Deflation, and Late Deflation waveforms with dicrotic notch landmarks and bedside fixes.</p>
+        </div>
+        <div class="card">
+          <span class="tag tag-cyan">ECMO CIRCUIT &amp; CONSOLE</span>
+          <h3>VA &amp; VV-ECMO Troubleshooting</h3>
+          <p>Adjust RPM, Sweep Gas, and FiO₂ while exploring animated circuits for Harlequin (North-South) syndrome, venous chatter, recirculation, and clotting.</p>
+        </div>
+        <div class="card">
+          <span class="tag tag-amber">HEMODYNAMICS EXPLORER</span>
+          <h3>PA → PAOP &amp; Tamponade</h3>
+          <p>Compare normal pulmonary artery wedge transitions against cardiac tamponade pressure equalization, severe RV failure, and acute aortic regurgitation.</p>
+        </div>
+        <div class="card">
+          <span class="tag tag-green">ECG CALIPER LAB</span>
+          <h3>Calibrated 40ms/200ms Grid</h3>
+          <p>Measure R-R, PR, and QRS intervals across NSR, A-Fib, Monomorphic VT, 3° AV Block, and Pacemaker Failure to Capture.</p>
+        </div>
+        <div class="card">
+          <span class="tag tag-cyan">IMPELLA &amp; LVAD CONSOLE</span>
+          <h3>MCS Alarms &amp; Unloading</h3>
+          <p>Practice P-level/RPM adjustments and troubleshoot Suction Events, Tamponade, and Catheter Migration at the bedside.</p>
+        </div>
+        <div class="card">
+          <span class="tag tag-amber">EPICARDIAL PACER BOX</span>
+          <h3>DDD / VVI / DOO Pacing</h3>
+          <p>Adjust Rate, mA Output, and mV Sensitivity to practice atrial/ventricular capture, loss of capture, oversensing, and R-on-T prevention.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="calculators">
+      <h2>Shift-Ready Bedside Calculators</h2>
+      <p class="sub">Built to stay on your phone long after exam day—offline hemodynamic &amp; perfusion math in seconds.</p>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Fick CO &amp; Cardiac Index</h3>
+          <p>Mosteller BSA or direct BSA, 125×BSA / 3.5×kg / custom VO₂, C(a-v)O₂ difference, and low-output alerts (&lt;2.2 L/min/m²).</p>
+        </div>
+        <div class="card">
+          <h3>SVR, PVR &amp; Cardiac Power Output</h3>
+          <p>Instant MAP, SVR, PVR (dynes &amp; Wood units), transpulmonary gradient, and CPO (MAP × CO / 451) with &lt;0.6 W shock alerts.</p>
+        </div>
+        <div class="card">
+          <h3>VIS, DO₂ &amp; Normal Ranges</h3>
+          <p>Vasoactive-Inotropic Score, oxygen delivery (DO₂ / DO₂I), and a quick-reference CVICU hemodynamic &amp; bleeding threshold sheet.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <h2>Simple, Transparent Pricing</h2>
+      <p class="sub">Start free with full CABG &amp; Hemodynamics banks, Daily Question, Visual Lab, and Calculators.</p>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag tag-green">FREE STARTER</span>
+          <h3>$0</h3>
+          <p>CABG &amp; Hemodynamics banks (150 Qs), Daily Question, Quick 10, Visual Lab previews, and all Bedside Calculators.</p>
+        </div>
+        <div class="card" style="border-color: var(--cyan);">
+          <span class="tag tag-cyan">ANNUAL PRO • 7-DAY TRIAL</span>
+          <h3>$99.99 / yr</h3>
+          <p>All 42 banks (2,500 Qs), SM-2 Spaced Repetition, Custom Quiz &amp; Timed Exam, plus our Free Extension Pass Guarantee.</p>
+        </div>
+        <div class="card">
+          <span class="tag tag-amber">LIFETIME BEDSIDE</span>
+          <h3>$159.99 once</h3>
+          <p>Permanent Pro access for your entire CVICU career—all banks, future updates, simulators, and bedside tools.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="educators">
+      <div class="b2b-box">
+        <div style="max-width: 600px;">
+          <div class="kicker">FOR NURSE EDUCATORS &amp; RESIDENCY DIRECTORS</div>
+          <h2 style="margin-top: 6px;">Hospital &amp; CVICU Unit Bulk Licensing</h2>
+          <p style="color: var(--muted); margin: 0;">
+            Equip your entire new-grad cohort, fellowship, or CSC/CMC prep group with 10, 25, or 50+ institutional access codes—simple invoicing and instant unit-code activation.
+          </p>
+        </div>
+        <a class="btn btn-primary" href="mailto:AMLSupportEmail@gmail.com?subject=CVICU%20Mastering%20The%20Bedside%20Hospital%20Bulk%20Licensing">Request Unit Pricing →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p>
+      <a href="./privacy-policy.html">Privacy Policy</a> &nbsp;•&nbsp;
+      <a href="./terms.html">Terms of Use, Disclaimers &amp; Pass Guarantee</a> &nbsp;•&nbsp;
+      Support: <a href="mailto:AMLSupportEmail@gmail.com">AMLSupportEmail@gmail.com</a>
+    </p>
+    <p>
+      Disclaimer: CVICU: Mastering The Bedside is intended strictly for educational, certification review, and reference purposes. It is not a medical device and does not diagnose, treat, cure, or prevent any medical condition. AACN®, CCRN®, CSC®, and CMC® are registered trademarks of the American Association of Critical-Care Nurses (AACN), which does not sponsor, endorse, or affiliate with this application.
+    </p>
+  </footer>
+</body>
+</html>
